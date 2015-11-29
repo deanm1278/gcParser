@@ -15,7 +15,6 @@
 #include "gcParser.h"
 
 const char gcParser::paramLetters[23] = {'A', 'B', 'C', 'D', 'E', 'H', 'I', 'J', 'K', 'L', 'P', 'Q', 'R', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'F'}; //parameter letters
-//const char gcParser::paramCmds[3] = {'F', 'S', 'T'}; //these are are special case "parameters" that are treated like commands
 
 gcParser::gcParser(){
     //--- command priority defined here --//
