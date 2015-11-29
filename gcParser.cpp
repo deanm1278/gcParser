@@ -21,9 +21,6 @@ gcParser::gcParser(){
     //--- command priority defined here --//
     order['G'][93] = 0;   //set feed rate mode
     order['G'][94] = 0;
-    //order['F'][strtof("", NULL)] = 1;     //set feed rate
-    //order['S'][strtof("", NULL)] = 2;     //set spindle speed
-    //order['T'][strtof("", NULL)] = 3;     //select tool
     order['M'][62] = 4;   //HAL pin I/0
     order['M'][63] = 4;
     order['M'][64] = 4;
@@ -135,15 +132,7 @@ int gcParser::parseBlock(std::string block, std::vector<cmd> &cmds){
         for( ; paramIter != paramIterEnd; ++paramIter ) {
             std::string p = *paramIter;
             char p_letter = p.at(0);
-            /*
-            if(std::find(std::begin(paramCmds), std::end(paramCmds), p_letter) != std::end(paramCmds)){
-                //if this is a special case param letter, register it as a command the value as the number
-                a.letter = p_letter;
-                a.params[GENERIC_PARAM] = strtof(p.substr(1, std::string::npos).c_str(), NULL);
-            }*/
-            //else{
-                a.params[p_letter] = strtof(p.substr(1, std::string::npos).c_str(), NULL);
-            //}
+            a.params[p_letter] = strtof(p.substr(1, std::string::npos).c_str(), NULL);
         }
         a.priority = order[a.letter][a.number];
         cmds.push_back(a);

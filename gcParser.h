@@ -11,7 +11,6 @@
 #ifndef GCPARSER_H
 #define	GCPARSER_H
 
-//#define GENERIC_PARAM '0'
 #define NO_LETTER '\0'
 
 typedef struct cmd{
